@@ -76,5 +76,16 @@ public class Employe implements Comparable<Employe> {
     public void trierEmployeParNomDepartementEtGrade(){
 
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Employe other = (Employe) obj;
+
+        return this.id == other.id &&
+                this.nom.equalsIgnoreCase(other.nom);
+    }
 }
 
